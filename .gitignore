@@ -3,3 +3,4 @@ testing
 *.env
 *.session
 __pycache__
+.idea
