@@ -1,0 +1,263 @@
+/* ------------------------------------------------ Верхний контейнер ----------------------------------------------*/
+
+.top-container {
+    position: relative;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+    flex-shrink: 0
+}
+
+.info-icon {
+    display: flex;
+    aspect-ratio: 1;
+    height: 50%;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.theme-icon {
+    display: flex;
+    aspect-ratio: 1;
+    height: 60%;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 20;
+    object-fit: contain;
+}
+
+.switch-track {
+    display: flex;
+    width: 50%;
+    height: 70%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.switch-position {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.switch-icon {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    margin: auto;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+/* -------------------------------------------------------- Карта ----------------------------------------------*/
+
+.map-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: inherit;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+}
+
+
+.map-image-container {
+    width: inherit;
+    height: inherit;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.position-div {
+    position: absolute;
+    aspect-ratio: 1;
+    cursor: pointer;
+    /*pointer-events: auto;*/
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.position-icon {
+    width: 100%;
+    transform-origin: 50% 100%;
+    aspect-ratio: 1;
+}
+
+.circle-span {
+    margin: auto;
+    aspect-ratio: 1;
+    position: absolute;
+    font-family: Roboto, sans-serif;
+    line-height: 1;
+    text-align: center;
+    font-size: 2.5cqw;
+    font-weight: bold;
+    transform-origin: 50% 50%;
+}
+
+.grenade-popup {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 6%;
+    background-color: #FFBC5A;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+/* -------------------------------------------------- Нижний контейнер ----------------------------------------------*/
+
+.controls-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.control-icon {
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------- Оверлей ----------------------------------------------*/
+.blur-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.3);  /*Полупрозрачный фон для усиления эффекта*/
+    z-index: 10;
+    pointer-events: auto; /* Позволяет кликать по оверлею для закрытия */
+}
+
+.border-in-overlay {
+    position: absolute;
+    border-radius: 8px;
+    box-sizing: border-box;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.instruction-block {
+    display: flex;
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.overlay-text {
+    position: absolute;
+    font-family: Roboto, sans-serif;
+    left: 50%;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+    line-height: 1.2
+}
+
+.large-font {
+    font-size: 5vw;
+}
+
+.little-font {
+    font-size: 3.5vw;
+}
+
+/* -------------------------------------------------- Загрузка ----------------------------------------------*/
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.3);
+    transition: backdrop-filter 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.fire-animation {
+    width: 20%;
+    height: 20%;
+    object-fit: contain;
+}
+
+/* -------------------------------------------------- Попапы ----------------------------------------------*/
+.subscribe-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.3);
+    transition: backdrop-filter 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.subscribe-popup {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 3% 5%;
+    width: 80%;
+    height: 40%;
+}
+
+.subscribe-button {
+    display: flex;
+    width: 80%;
+    flex-grow: 1;
+    border-radius: 6px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
