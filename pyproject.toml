@@ -1,0 +1,28 @@
+[project]
+name = "cs-education-bot"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Soulbadguy",email = "Sok54rus@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "aiogram (>=3.19.0,<4.0.0)",
+    "sqlalchemy (>=2.0.39,<3.0.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "cachetools (>=5.5.2,<6.0.0)",
+    "environs (>=14.1.1,<15.0.0)",
+    "arq (>=0.26.3,<0.27.0)",
+    "msgpack (>=1.1.0,<2.0.0)",
+    "sqlmodel (>=0.0.24,<0.0.25)",
+    "pyrotgfork (>=2.2.9,<3.0.0)",
+    "mtprotocrypt (>=1.2.6.5b0,<2.0.0.0)",
+    "emoji (>=2.14.1,<3.0.0)",
+    "ruff (>=0.13.0,<0.14.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
