@@ -1,0 +1,30 @@
+name: Deploy_front
+
+on:
+  push:
+    branches:
+      - frontend
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to server
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+        run: |
+          echo "$DEPLOY_SSH_KEY" > key
+          chmod 600 key
+          ssh -o StrictHostKeyChecking=no -i key $SERVER_USER@$SERVER_IP << 'EOF'
+            cd cs_education/frontend/
+            git pull origin frontend
+            cd /
+            rm var/www/cs_education/*
+            cp -r root/cs_education/frontend/dist/. var/www/cs_education/
+          EOF
+          rm key
